@@ -1,0 +1,162 @@
+@import './variable.scss';
+
+main {
+  height: 100vh;
+  .d-flex-jcsb {
+    &:last-child {
+      margin-top: 119px;
+    }
+  }
+}
+
+.logo {
+  @include size(148px, 148px);
+  font-size: 31px;
+  color: #FFF;
+  border: 2px solid #FFF;
+  margin-top: 62px;
+  margin-left: 68px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background-image: repeating-linear-gradient(135deg, transparent 5px, transparent 10px, #fff 0px, #fff 11px);
+  }
+
+  &::before {
+    @include size(100%, 15px);
+  }
+
+  &::after {
+    @include size(14px, 100%);
+  }
+
+  h1 {
+    line-height: 45px;
+    font-weight: 500;
+  }
+}
+
+
+.roomNameList {
+  @include size(calc(305px - 34px), calc(404px - 18.5px));
+  background: #FFF;
+  padding-top: 18.5px;
+  padding-left: 34px;
+  margin-top: 49px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.3) 3px, rgba(255, 255, 255, 0.3) 10px, #fff 0px, #fff 11px);
+    @include size(90%, 20px);
+  }
+
+  li {
+    padding: 18.5px 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 23px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: -34px;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .roomNameActive {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.currentRoomName {
+  color: #FFF;
+  margin-left: 68px;
+
+  h2 {
+    font-size: 66px;
+    margin-bottom: 14px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.3) 3px, rgba(255, 255, 255, 0.3) 10px, #fff 0px, #fff 11px);
+      @include size(88px, 19px);
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+.contentUs {
+  color: #FFF;
+  margin-right: 40px;
+
+  li {
+    display: flex;
+
+    &:first-child {
+      margin-bottom: 49px;
+    }
+
+    div {
+      margin-right: 11px;
+      margin-bottom: 16px;
+      @include size(20px, 20px);
+    }
+  }
+
+  .facebook {
+    @include image ('../images/icons/index_icons/facebook-square-brands.svg');
+  }
+
+  .instagram {
+    @include image ('../images/icons/index_icons/instagram-brands.svg');
+  }
+
+  .phone {
+    div {
+      @include image ('../images/icons/index_icons/phone-alt-solid.svg');
+    }
+  }
+
+  .email {
+    div {
+      @include image ('../images/icons/index_icons/envelope-solid.svg');
+    }
+  }
+
+  .address {
+    div {
+      @include image ('../images/icons/index_icons/home-solid.svg');
+    }
+  }
+}

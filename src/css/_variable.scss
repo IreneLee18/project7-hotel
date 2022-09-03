@@ -1,0 +1,19 @@
+@mixin size ($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin image ($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.d-flex-jcsb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.opacity0 {
+opacity: 0;
+}

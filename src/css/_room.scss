@@ -1,0 +1,172 @@
+@import './variable';
+
+.container {
+  padding: 49px 69px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainInfo {
+  width: 641px;
+}
+
+.roomTitle {
+  font-size: 36px;
+  margin-bottom: 31px;
+  font-weight: 500;
+}
+
+.roomInfo {
+  li {
+    margin-bottom: 16px;
+    letter-spacing: 1.25px;
+    line-height: 20px;
+  }
+}
+
+.separator {
+  margin: 28px 0;
+}
+
+.checkTimes {
+  display: flex;
+
+  li {
+    margin-right: 96px;
+  }
+
+  .checkTime {
+    font-size: 21px;
+    margin-top: 12px;
+  }
+}
+
+.roomEquipment {
+  background: #F0F0F0;
+  padding: 30px 30px 0;
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    li {
+      display: flex;
+      margin-bottom: 30px;
+
+      div {
+        display: inline-block;
+        @include size(25px, 25px);
+        margin-right: 18px;
+      }
+    }
+  }
+}
+
+
+.priceInfo {
+  text-align: right;
+
+  h2 {
+    margin-bottom: 14px;
+
+    &:first-child {
+      font-size: 30px;
+    }
+
+    &:last-child {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: #6D7278;
+    margin-bottom: 14px;
+  }
+}
+
+.calendarInfo {
+  width: 383px;
+
+  .calendar {
+    background: #F7F7F7;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    @include size(calc(383px - 84px), calc(390px - 30px - 38px));
+    padding: 30px 42px 38px;
+  }
+
+  .calendarYearMonth {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      background: transparent;
+      font-size: 24px;
+    }
+
+    p {
+      font-weight: 600;
+    }
+  }
+
+  .calendarWeek {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 19px;
+    font-size: 18px;
+
+    li {
+      @include size(42.7px, 42.7px)
+    }
+  }
+
+  .calendarDate {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      @include size(42.7px, 42.7px);
+      text-align: center;
+      line-height: 42.7px;
+    }
+
+    .passDate {
+      color: #C9CCD0;
+    }
+  }
+}
+
+.reserveBtn {
+  @include size(118px, 53px);
+  background: #575757;
+  color: #FFF;
+  font-size: 16px;
+  letter-spacing: 1.67px;
+  margin-top: 26px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: repeating-linear-gradient(45deg, transparent 7px, transparent 10px, #000 0px, #000 11px);
+  }
+
+  &::before {
+    @include size(92%, 7px);
+    left: 13.5px;
+    bottom: -8px;
+  }
+
+  &::after {
+    @include size(8px, 100%);
+    left: 117px;
+    bottom: -4px;
+  }
+
+  &:hover {
+    opacity: .5;
+  }
+}
