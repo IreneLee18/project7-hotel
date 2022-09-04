@@ -43,23 +43,27 @@
 
 .roomEquipment {
   background: #F0F0F0;
-  padding: 30px 30px 0;
+  padding: 30px;
   margin: 40px 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 221px;
 
-  ul {
-    li {
-      display: flex;
-      margin-bottom: 30px;
+  li {
+    display: flex;
+    align-items: center;
+    width: 142px;
 
-      div {
-        display: inline-block;
-        @include size(25px, 25px);
-        margin-right: 18px;
-      }
+    img {
+      @include size(25px, 25px);
+      margin-right: 18px;
+    }
+
+    div {
+      display: inline-block;
     }
   }
+
 }
 
 
@@ -87,6 +91,13 @@
 
 .calendarInfo {
   width: 383px;
+
+  .reservedContent {
+    font-style: oblique;
+    font-size: 14px;
+    margin-top: 16px;
+    color: #D8D8D8;
+  }
 
   .calendar {
     background: #F7F7F7;
@@ -130,6 +141,18 @@
       @include size(42.7px, 42.7px);
       text-align: center;
       line-height: 42.7px;
+    }
+
+    .reserved {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        @include size(100%, 100%);
+        background-image: repeating-linear-gradient(45deg, transparent 7px, transparent 10px, #000 0px, #000 11px);
+      }
     }
 
     .passDate {

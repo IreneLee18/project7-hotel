@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import roomData from "./Component/RoomData";
+import { getRooms } from "../../Utils/Api";
 function Home() {
+  useEffect(() => {
+    getRooms().then((res) => console.log(res));
+  }, []);
   const [currentRoom, setCurrentRoom] = useState(roomData[0]);
   const handleMouseEnter = (e) => {
     const { id } = e.target;
     // 綁定條件，以防取得到空白的id，導致整個出錯！
-    if(id){
+    if (id) {
       const mouseEnterRoom = roomData.filter((item) => item.id === id);
       // 因為要取得的是物件而非陣列，所以用展開方式取得資料
       setCurrentRoom(...mouseEnterRoom);

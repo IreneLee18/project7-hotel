@@ -75,6 +75,8 @@ input {
 
 .opacity0 {
   opacity: 0;
+  cursor: auto;
+  z-index: -1000;
 }
 
 main {
@@ -260,6 +262,8 @@ main .d-flex-jcsb:last-child {
 
 .opacity0 {
   opacity: 0;
+  cursor: auto;
+  z-index: -1000;
 }
 
 .container {
@@ -309,28 +313,34 @@ main .d-flex-jcsb:last-child {
 
 .roomEquipment {
   background: #F0F0F0;
-  padding: 30px 30px 0;
+  padding: 30px;
   margin: 40px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 221px;
 }
 
-.roomEquipment ul li {
+.roomEquipment li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 142px;
 }
 
-.roomEquipment ul li div {
-  display: inline-block;
+.roomEquipment li img {
   width: 25px;
   height: 25px;
   margin-right: 18px;
+}
+
+.roomEquipment li div {
+  display: inline-block;
 }
 
 .priceInfo {
@@ -357,6 +367,13 @@ main .d-flex-jcsb:last-child {
 
 .calendarInfo {
   width: 383px;
+}
+
+.calendarInfo .reservedContent {
+  font-style: oblique;
+  font-size: 14px;
+  margin-top: 16px;
+  color: #D8D8D8;
 }
 
 .calendarInfo .calendar {
@@ -420,6 +437,19 @@ main .d-flex-jcsb:last-child {
   line-height: 42.7px;
 }
 
+.calendarInfo .calendarDate .reserved {
+  position: relative;
+}
+
+.calendarInfo .calendarDate .reserved::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(45deg, transparent 7px, transparent 10px, #000 0px, #000 11px);
+}
+
 .calendarInfo .calendarDate .passDate {
   color: #C9CCD0;
 }
@@ -470,6 +500,8 @@ main .d-flex-jcsb:last-child {
 
 .opacity0 {
   opacity: 0;
+  cursor: auto;
+  z-index: -1000;
 }
 
 .modal {
@@ -527,22 +559,22 @@ main .d-flex-jcsb:last-child {
 .inputGroup label input {
   border: 1px solid #C9C9C9;
   border-radius: 5px;
-  padding-left: 10px;
 }
 
 .inputGroup label input[type="text"],
 .inputGroup label input[type="number"] {
   width: 233px;
   height: 32px;
+  padding-left: 10px;
 }
 
 .inputGroup label input[type="date"] {
-  width: 81px;
+  width: 111px;
   height: 32px;
 }
 
 .inputGroup label div {
-  margin: 0 26px;
+  margin: 0 6px;
 }
 
 .selectDate {
@@ -608,5 +640,30 @@ main .d-flex-jcsb:last-child {
   height: 37px;
   background: #484848;
   color: #FFF;
+}
+
+.modalContainer_confirm {
+  width: 423px;
+  height: 248px;
+  background: #FFF;
+}
+
+.confirm {
+  margin-bottom: 10px;
+}
+
+.modalBody_confirm {
+  text-align: center;
+}
+
+.modalBody_confirm img {
+  width: 60px;
+  height: 60px;
+}
+
+.confirmBtn {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 /*# sourceMappingURL=all.css.map */

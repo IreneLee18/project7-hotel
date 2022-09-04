@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 const weekData = ["日", "一", "二", "三", "四", "五", "六"];
 
 function Calendar() {
@@ -14,13 +14,19 @@ function Calendar() {
     day: day,
   });
   const [currentCalendar, setCurrentCalendar] = useState([]);
-  const data = useRef([]);
-  const calendarMonth = useCallback(() => {
+  const currentCalendarData = useRef([]);
+
+  useEffect(() => {
+    // 每次執行changeMonth重新取得資料時，都要將currentCalendarData.current淨空，防止資料不斷往上加上去
+    currentCalendarData.current = [];
+    // 最大的目的是要知道月曆上的第一天是星期幾
     const calendarFirstDate = new Date(
       calendar.year,
       calendar.month,
       1 - new Date(calendar.year, calendar.month, 1).getDay()
     );
+    // console.log(calendarFirstDate)
+
     let date;
     for (let i = 0; i < 42; i++) {
       date = new Date(
@@ -28,19 +34,16 @@ function Calendar() {
         calendarFirstDate.getMonth(),
         calendarFirstDate.getDate() + i
       );
-      data.current.push({
+      currentCalendarData.current.push({
         year: date.getFullYear(),
         month: date.getMonth(),
         date: date.getDate(),
         day: date.getDay(),
       });
     }
+    setCurrentCalendar(currentCalendarData.current);
   }, [calendar.month, calendar.year]);
-  useEffect(() => {
-    calendarMonth();
-    data.current.splice(42, 84);
-    setCurrentCalendar(data.current);
-  }, [calendarMonth]);
+
   const changeMonth = (e) => {
     const { id } = e.target;
     const currentMonth = calendar.month;
@@ -48,10 +51,8 @@ function Calendar() {
       if (currentMonth > 10) {
         setCalendar((state) => ({ ...state, year: state.year + 1 }));
         setCalendar((state) => ({ ...state, month: 0 }));
-        console.log("0:", currentMonth);
       } else {
         setCalendar((state) => ({ ...state, month: state.month + 1 }));
-        console.log("10:", currentMonth);
       }
     } else {
       if (currentMonth < 1) {
@@ -66,7 +67,11 @@ function Calendar() {
     <>
       <div className="calendar">
         <div className="calendarYearMonth">
-          <button id="left" onClick={changeMonth}>
+          <button
+            id="left"
+            onClick={changeMonth}
+            className={calendar.month === today.month ? "opacity0" : ""}
+          >
             &#60;
           </button>
           <p>
@@ -85,14 +90,12 @@ function Calendar() {
           {currentCalendar.map((item) => (
             <li
               className={`${
-                Number(item.month) !== Number(calendar.month)
-                  ? "opacity0"
-                  : null
+                Number(item.month) !== Number(calendar.month) ? "opacity0" : ""
               } ${
-                Number(item.month) === Number(calendar.month) &&
+                Number(item.month) === Number(today.month) &&
                 item.date < today.date
                   ? "passDate"
-                  : null
+                  : ""
               }`}
               key={item.date + Math.random()}
             >

@@ -76,3 +76,79 @@ export const roomEquipmentData3 = [
     id: "pet",
   },
 ];
+
+export const roomEquipmentData = [
+  {
+    name: "Wi-Fi",
+    imageUrl: wifi,
+    id: "wifi",
+  },
+  {
+    name: "早餐",
+    imageUrl: breakfast,
+    id: "breakfast",
+  },
+  {
+    name: "Mini Bar",
+    imageUrl: minibar,
+    id: "minibar",
+  },
+  {
+    name: "Room Service",
+    imageUrl: roomservice,
+    id: "roomservice",
+  },
+  {
+    name: "電話",
+    imageUrl: phone,
+    id: "phone",
+  },
+  {
+    name: "空調",
+    imageUrl: air,
+    id: "air",
+  },
+  {
+    name: "冰箱",
+    imageUrl: refrigerator,
+    id: "refrigerator",
+  },
+  {
+    name: "沙發",
+    imageUrl: sofa,
+    id: "sofa",
+  },
+  {
+    name: "漂亮的視野",
+    imageUrl: view,
+    id: "view",
+  },
+  {
+    name: "禁止吸煙",
+    imageUrl: smoke,
+    id: "smoke",
+  },
+  {
+    name: "適合兒童",
+    imageUrl: baby,
+    id: "baby",
+  },
+  {
+    name: "寵物攜帶",
+    imageUrl: pet,
+    id: "pet",
+  },
+];
+
+export const roomEquipment =()=> {
+  return (
+    <>
+      {roomEquipmentData.map((item) => (
+        <li key={item.id} id={item.id}>
+          <img src={item.image} alt={item.id} />
+          <div>{item.name}</div>
+        </li>
+      ))}
+    </>
+  );
+}

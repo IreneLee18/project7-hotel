@@ -1,7 +1,5 @@
 import {
-  roomEquipmentData1,
-  roomEquipmentData2,
-  roomEquipmentData3,
+  roomEquipmentData
 } from "./Components/RoomEquipment";
 import Calendar from "./Components/Calendar";
 import ReserveModal from "./Components/ReserveModal";
@@ -11,8 +9,8 @@ function Room() {
   const reserveModal = useRef()
   const handleClick = ()=>{
     reserveModal.current.openModal()
-    console.log('click')
   }
+  console.log(roomEquipmentData)
   return (
     <>
       <div className="container">
@@ -42,42 +40,12 @@ function Room() {
             </li>
           </ul>
           <ul className="roomEquipment">
-            <li>
-              <ul>
-                {roomEquipmentData1.map((item) => (
+                {roomEquipmentData.map((item) => (
                   <li key={item.id} id={item.id}>
-                    <div
-                      style={{ backgroundImage: `url(${item.imageUrl})` }}
-                    ></div>
-                    <span>{item.name}</span>
+                    <img src={item.imageUrl} alt={item.id}/>
+                    <div>{item.name}</div>
                   </li>
                 ))}
-              </ul>
-            </li>
-            <li>
-              <ul>
-                {roomEquipmentData2.map((item) => (
-                  <li key={item.id} id={item.id}>
-                    <div
-                      style={{ backgroundImage: `url(${item.imageUrl})` }}
-                    ></div>
-                    <span>{item.name}</span>
-                  </li>
-                ))}
-              </ul>
-            </li>
-            <li>
-              <ul>
-                {roomEquipmentData3.map((item) => (
-                  <li key={item.id} id={item.id}>
-                    <div
-                      style={{ backgroundImage: `url(${item.imageUrl})` }}
-                    ></div>
-                    <span>{item.name}</span>
-                  </li>
-                ))}
-              </ul>
-            </li>
           </ul>
         </div>
         <div className="priceInfo">
@@ -88,6 +56,7 @@ function Room() {
         </div>
         <div className="calendarInfo">
           <Calendar />
+          <p className="reservedContent">＊斜線代表已被預約</p>
           <button className="reserveBtn" onClick={handleClick}>預約時段</button>
         </div>
       </div>

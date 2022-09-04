@@ -44,20 +44,20 @@
     input {
       border: 1px solid #C9C9C9;
       border-radius: 5px;
+    }
+    
+    input[type="text"],
+    input[type="number"] {
+      @include size (233px, 32px);
       padding-left: 10px;
     }
 
-    input[type="text"],
-    input[type="number"] {
-      @include size (233px, 32px)
-    }
-
     input[type="date"] {
-      @include size (81px, 32px);
+      @include size (111px, 32px);
     }
 
     div {
-      margin: 0 26px;
+      margin: 0 6px;
     }
   }
 
@@ -120,4 +120,22 @@
       color: #FFF;
     }
   }
+}
+
+
+.modalContainer_confirm {
+  @include size(423px, 248px);
+  background: #FFF;
+}
+.confirm{
+  margin-bottom: 10px;
+}
+.modalBody_confirm{
+  text-align: center;
+  img{
+    @include size(60px,60px)
+  }
+}
+.confirmBtn{
+  justify-content: flex-end;
 }
