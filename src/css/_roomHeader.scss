@@ -4,6 +4,12 @@
   @include size(100%, 596px);
   display: flex;
   justify-content: space-between;
+  position: relative;
+  .room-logo{
+    position: absolute;
+    top: 32px;
+    left: 49px;
+  }
   div{
     background-size:cover;
     background-position: center;
