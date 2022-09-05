@@ -1,4 +1,4 @@
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 import Room from "./pages/Room/Room";
 import { Routes, Route } from "react-router-dom";
 
@@ -7,8 +7,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="room" element={<Room />}>
-          <Route path=":id"  />
+        <Route path="room">
+          <Route path=":id" element={<Room />}/>
         </Route>
       </Routes>
       {/* <Room /> */}

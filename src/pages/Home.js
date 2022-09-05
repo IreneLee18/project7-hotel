@@ -1,11 +1,19 @@
+import Loading from '../Components/Loading'
 import { useEffect, useState } from "react";
-import roomData from "./Component/RoomData";
-import { getRooms } from "../../Utils/Api";
+import { Link } from "react-router-dom";
+import { getRooms } from "../Utils/Api";
 function Home() {
+  const [roomData, setRoomData] = useState([]);
+  const [currentRoom, setCurrentRoom] = useState(roomData);
   useEffect(() => {
-    getRooms().then((res) => console.log(res));
+    getRooms().then((res) => {
+      res.items.forEach((item, index) => {
+        item.roomNum = `0${index+1}`;
+      });
+      setRoomData(res.items);
+      setCurrentRoom(res.items[0]);
+    });
   }, []);
-  const [currentRoom, setCurrentRoom] = useState(roomData[0]);
   const handleMouseEnter = (e) => {
     const { id } = e.target;
     // 綁定條件，以防取得到空白的id，導致整個出錯！
@@ -17,11 +25,15 @@ function Home() {
   };
   return (
     <>
+    {roomData.length === 0 ? (
+        <Loading />
+      ) : (
       <main
         style={{
           backgroundImage: `url(${currentRoom.imageUrl})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom",
         }}
       >
         <div className="d-flex-jcsb">
@@ -36,7 +48,7 @@ function Home() {
                 id={item.id}
                 onMouseEnter={handleMouseEnter}
               >
-                <a href="#">{item.name}</a>
+                <Link to={`/room/${item.id}`}>{item.name}</Link>
               </li>
             ))}
           </ul>
@@ -63,6 +75,7 @@ function Home() {
           </ul>
         </div>
       </main>
+)}
     </>
   );
 }
