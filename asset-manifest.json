@@ -1,15 +1,10 @@
 {
   "files": {
-    "main.css": "/project7-hotel/static/css/main.d949786a.css",
-    "main.js": "/project7-hotel/static/js/main.78b23a3b.js",
+    "main.css": "/project7-hotel/static/css/main.5b2ce7f2.css",
+    "main.js": "/project7-hotel/static/js/main.938878d2.js",
     "static/js/787.65363d25.chunk.js": "/project7-hotel/static/js/787.65363d25.chunk.js",
-    "static/media/room1.jpg": "/project7-hotel/static/media/room1.30e39aab99791fb22a82.jpg",
-    "static/media/room2.jpg": "/project7-hotel/static/media/room2.b2a45b7811dda3cf655e.jpg",
-    "static/media/room3.jpg": "/project7-hotel/static/media/room3.b2a45b7811dda3cf655e.jpg",
-    "static/media/room4.jpg": "/project7-hotel/static/media/room4.551b21ed23490a188402.jpg",
-    "static/media/room5.jpg": "/project7-hotel/static/media/room5.a184d1124c3580fb3a1f.jpg",
-    "static/media/room6.jpg": "/project7-hotel/static/media/room6.01f67da39d0a98c5fcc2.jpg",
     "static/media/phone.svg": "/project7-hotel/static/media/phone.98777417b801dbc847aa18ac34663b03.svg",
+    "static/media/logo_block.svg": "/project7-hotel/static/media/logo_block.3eb687163b607563497cc31779f5f362.svg",
     "static/media/no-smoke-symbol.svg": "/project7-hotel/static/media/no-smoke-symbol.e12fdb43b21ec48251f97daa28f60d0f.svg",
     "static/media/room_service.svg": "/project7-hotel/static/media/room_service.3f3c785c72ef255002bf5b13046558e4.svg",
     "static/media/dog.svg": "/project7-hotel/static/media/dog.8273a0214f5ff1279879fcdddcef3d84.svg",
@@ -28,12 +23,12 @@
     "static/media/phone-alt-solid.svg": "/project7-hotel/static/media/phone-alt-solid.d2ab2513c5e452cfe15d.svg",
     "static/media/refrigerator.svg": "/project7-hotel/static/media/refrigerator.49c5060bf3e3aef0ade78d21cbcf2a6f.svg",
     "static/media/sofa.svg": "/project7-hotel/static/media/sofa.7d8d58528f749456c17e018088d8c8b5.svg",
-    "main.d949786a.css.map": "/project7-hotel/static/css/main.d949786a.css.map",
-    "main.78b23a3b.js.map": "/project7-hotel/static/js/main.78b23a3b.js.map",
+    "main.5b2ce7f2.css.map": "/project7-hotel/static/css/main.5b2ce7f2.css.map",
+    "main.938878d2.js.map": "/project7-hotel/static/js/main.938878d2.js.map",
     "787.65363d25.chunk.js.map": "/project7-hotel/static/js/787.65363d25.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d949786a.css",
-    "static/js/main.78b23a3b.js"
+    "static/css/main.5b2ce7f2.css",
+    "static/js/main.938878d2.js"
   ]
 }
