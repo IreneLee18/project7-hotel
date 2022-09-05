@@ -1,6 +1,6 @@
 import { useImperativeHandle, forwardRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import success from "../../../images/icons/info_icons/tick-inside-circle.svg";
+import success from "../../../icons/info_icons/tick-inside-circle.svg";
 function ReserveModal(props, ref) {
   let navigate = useNavigate();
   const [reservedDate, setReservedDate] = useState({
