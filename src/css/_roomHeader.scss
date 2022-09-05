@@ -1,0 +1,23 @@
+@import './variable';
+
+.roomHeader {
+  @include size(100%, 596px);
+  display: flex;
+  justify-content: space-between;
+  div{
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &-s{
+    @include size (60%,100%);
+  }
+  &-e{
+    display: flex;
+    flex-direction: column;
+    @include size (40%,100%);
+  }
+  &-r-item{
+    @include size (100%,298px);
+  }
+}

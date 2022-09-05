@@ -135,28 +135,28 @@ main {
   }
 
   .facebook {
-    @include image ('../images/icons/index_icons/facebook-square-brands.svg');
+    @include image ('../icons/index_icons/facebook-square-brands.svg');
   }
 
   .instagram {
-    @include image ('../images/icons/index_icons/instagram-brands.svg');
+    @include image ('../icons/index_icons/instagram-brands.svg');
   }
 
   .phone {
     div {
-      @include image ('../images/icons/index_icons/phone-alt-solid.svg');
+      @include image ('../icons/index_icons/phone-alt-solid.svg');
     }
   }
 
   .email {
     div {
-      @include image ('../images/icons/index_icons/envelope-solid.svg');
+      @include image ('../icons/index_icons/envelope-solid.svg');
     }
   }
 
   .address {
     div {
-      @include image ('../images/icons/index_icons/home-solid.svg');
+      @include image ('../icons/index_icons/home-solid.svg');
     }
   }
 }

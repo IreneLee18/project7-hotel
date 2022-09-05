@@ -79,6 +79,10 @@ input {
   z-index: -1000;
 }
 
+.opacity03 {
+  opacity: 0.3;
+}
+
 main {
   height: 100vh;
 }
@@ -222,31 +226,31 @@ main .d-flex-jcsb:last-child {
 }
 
 .contentUs .facebook {
-  background-image: url("../images/icons/index_icons/facebook-square-brands.svg");
+  background-image: url("../icons/index_icons/facebook-square-brands.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .contentUs .instagram {
-  background-image: url("../images/icons/index_icons/instagram-brands.svg");
+  background-image: url("../icons/index_icons/instagram-brands.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .contentUs .phone div {
-  background-image: url("../images/icons/index_icons/phone-alt-solid.svg");
+  background-image: url("../icons/index_icons/phone-alt-solid.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .contentUs .email div {
-  background-image: url("../images/icons/index_icons/envelope-solid.svg");
+  background-image: url("../icons/index_icons/envelope-solid.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .contentUs .address div {
-  background-image: url("../images/icons/index_icons/home-solid.svg");
+  background-image: url("../icons/index_icons/home-solid.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -264,6 +268,10 @@ main .d-flex-jcsb:last-child {
   opacity: 0;
   cursor: auto;
   z-index: -1000;
+}
+
+.opacity03 {
+  opacity: 0.3;
 }
 
 .container {
@@ -502,6 +510,68 @@ main .d-flex-jcsb:last-child {
   opacity: 0;
   cursor: auto;
   z-index: -1000;
+}
+
+.opacity03 {
+  opacity: 0.3;
+}
+
+.roomHeader {
+  width: 100%;
+  height: 596px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.roomHeader div {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.roomHeader-s {
+  width: 60%;
+  height: 100%;
+}
+
+.roomHeader-e {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  height: 100%;
+}
+
+.roomHeader-r-item {
+  width: 100%;
+  height: 298px;
+}
+
+.d-flex-jcsb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.opacity0 {
+  opacity: 0;
+  cursor: auto;
+  z-index: -1000;
+}
+
+.opacity03 {
+  opacity: 0.3;
 }
 
 .modal {
