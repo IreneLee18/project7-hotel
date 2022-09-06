@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 const weekData = ["日", "一", "二", "三", "四", "五", "六"];
 
-function Calendar() {
+function Calendar({ bookingData }) {
   const year = new Date().getFullYear();
   const month = new Date().getMonth();
   const date = new Date().getDate();
@@ -14,7 +14,9 @@ function Calendar() {
     day: day,
   });
   const [currentCalendar, setCurrentCalendar] = useState([]);
+  const [bookingAllData, setBookingAllData] = useState([]);
   const currentCalendarData = useRef([]);
+  const bookingList = useRef([]);
 
   useEffect(() => {
     // 每次執行changeMonth重新取得資料時，都要將currentCalendarData.current淨空，防止資料不斷往上加上去
@@ -42,7 +44,15 @@ function Calendar() {
       });
     }
     setCurrentCalendar(currentCalendarData.current);
-  }, [calendar.month, calendar.year]);
+
+    // bookData
+    const list = [];
+    bookingData.forEach((data) =>
+      list.push(`${data.date.substring(6, 7)}-${data.date.substring(9, 10)}`)
+    );
+    bookingList.current = list;
+    setBookingAllData(bookingList.current);
+  }, [bookingData, calendar.month, calendar.year]);
 
   const changeMonth = (e) => {
     const { id } = e.target;
@@ -95,6 +105,10 @@ function Calendar() {
                 Number(item.month) === Number(today.month) &&
                 item.date < today.date
                   ? "passDate"
+                  : ""
+              } ${
+                bookingAllData.includes(item.month + 1 + "-" + item.date)
+                  ? "reserved"
                   : ""
               }`}
               key={item.date + Math.random()}

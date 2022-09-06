@@ -638,8 +638,7 @@ main .d-flex-jcsb:last-child {
   border-radius: 5px;
 }
 
-.inputGroup label input[type="text"],
-.inputGroup label input[type="number"] {
+.inputGroup label input[type="text"] {
   width: 233px;
   height: 32px;
   padding-left: 10px;

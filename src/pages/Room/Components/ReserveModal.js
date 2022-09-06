@@ -1,32 +1,56 @@
-import { useImperativeHandle, forwardRef, useState } from "react";
+import {
+  useImperativeHandle,
+  forwardRef,
+  useState,
+  useEffect,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import success from "../../../icons/info_icons/tick-inside-circle.svg";
 function ReserveModal(props, ref) {
   let navigate = useNavigate();
-  const [reservedDate, setReservedDate] = useState({
-    firstDate: "",
-    lastDate: "",
-  });
+  const [name, setName] = useState("");
+  const [tel, setTel] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [reservedDate, setReservedDate] = useState([
+    {
+      type: "平日時段",
+      count: 0,
+      id: "normalDay",
+    },
+    {
+      type: "平日時段",
+      count: 0,
+      id: "holiday",
+    },
+  ]);
+  const [total, setTotal] = useState(0);
   const [step, setStep] = useState("reserve");
   const handleChange = (e) => {
     const { id, value } = e.target;
     switch (id) {
-      case "firstDate":
-        setReservedDate((state) => ({ ...state, firstDate: value }));
+      case "name":
+        setName(value);
         break;
-      case "lastDate":
-        setReservedDate((state) => ({ ...state, lastDate: value }));
+      case "tel":
+        setTel(value);
+        break;
+      case "startDate":
+        setStartDate(value);
+        break;
+      case "endDate":
+        setEndDate(value);
         break;
       default:
         new Error("error");
         break;
     }
   };
-
+  useEffect(() => {});
   const handleClick = (e) => {
     switch (e.target.id) {
       case "confirm":
-        setStep("confirm");
+        // setStep("confirm");
         break;
       case "cancel":
         setModalState(false);
@@ -60,43 +84,51 @@ function ReserveModal(props, ref) {
             <div className="inputGroup">
               <label htmlFor="name">
                 <span>姓名</span>
-                <input type="text" id="name" />
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={handleChange}
+                />
               </label>
-              <label htmlFor="phoneNumber">
+              <label htmlFor="tel">
                 <span>電話</span>
-                <input type="number" id="phoneNumber" />
+                <input
+                  type="text"
+                  id="tel"
+                  value={tel}
+                  onChange={handleChange}
+                />
               </label>
               <label htmlFor="date">
                 <span>預約起迄</span>
                 <input
                   type="date"
-                  id="firstDate"
-                  value={reservedDate.firstDate}
+                  id="startDate"
+                  value={startDate}
                   onChange={handleChange}
                 />
                 <div>~</div>
                 <input
                   type="date"
-                  id="lastDate"
-                  value={reservedDate.lastDate}
+                  id="endDate"
+                  value={endDate}
                   onChange={handleChange}
                 />
               </label>
             </div>
             <ul className="selectDate">
-              <li>
-                <div>平日時段</div>
-                <div>1夜</div>
-              </li>
-              <li>
-                <div>假日時段</div>
-                <div>1夜</div>
-              </li>
+              {reservedDate.map((item) => (
+                <li key={item.id}>
+                  <div>{item.type}</div>
+                  <div>{item.count}夜</div>
+                </li>
+              ))}
             </ul>
             <div className="totalPrice">
               <h2>
                 <span>=</span>
-                <span>NT.2850</span>
+                <span>NT.{total}</span>
               </h2>
             </div>
           </div>

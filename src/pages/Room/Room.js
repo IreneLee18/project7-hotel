@@ -10,6 +10,7 @@ import { getRoom } from "../../Utils/Api";
 function Room() {
   const { id } = useParams();
   const [roomData, setRoomData] = useState([]);
+  const [bookingData, setBookingData] = useState([]);
   const reserveModal = useRef();
   const handleClick = () => {
     reserveModal.current.openModal();
@@ -18,6 +19,7 @@ function Room() {
   useEffect(() => {
     getRoom(id).then((res) => {
       setRoomData(res.room[0]);
+      setBookingData(res.booking)
       const equipmentList = [];
       Object.entries(res.room[0].amenities).forEach((item) => {
         let equipmentObj = {};
@@ -88,7 +90,7 @@ function Room() {
               <p>假日(五~日)</p>
             </div>
             <div className="calendarInfo">
-              <Calendar />
+              <Calendar bookingData={bookingData} />
               <p className="reservedContent">＊斜線代表已被預約</p>
               <button className="reserveBtn" onClick={handleClick}>
                 預約時段
