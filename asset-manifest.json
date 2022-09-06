@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project7-hotel/static/css/main.5b2ce7f2.css",
-    "main.js": "/project7-hotel/static/js/main.938878d2.js",
+    "main.css": "/project7-hotel/static/css/main.416af231.css",
+    "main.js": "/project7-hotel/static/js/main.daa5559f.js",
     "static/js/787.65363d25.chunk.js": "/project7-hotel/static/js/787.65363d25.chunk.js",
     "static/media/phone.svg": "/project7-hotel/static/media/phone.98777417b801dbc847aa18ac34663b03.svg",
     "static/media/logo_block.svg": "/project7-hotel/static/media/logo_block.3eb687163b607563497cc31779f5f362.svg",
@@ -23,12 +23,12 @@
     "static/media/phone-alt-solid.svg": "/project7-hotel/static/media/phone-alt-solid.d2ab2513c5e452cfe15d.svg",
     "static/media/refrigerator.svg": "/project7-hotel/static/media/refrigerator.49c5060bf3e3aef0ade78d21cbcf2a6f.svg",
     "static/media/sofa.svg": "/project7-hotel/static/media/sofa.7d8d58528f749456c17e018088d8c8b5.svg",
-    "main.5b2ce7f2.css.map": "/project7-hotel/static/css/main.5b2ce7f2.css.map",
-    "main.938878d2.js.map": "/project7-hotel/static/js/main.938878d2.js.map",
+    "main.416af231.css.map": "/project7-hotel/static/css/main.416af231.css.map",
+    "main.daa5559f.js.map": "/project7-hotel/static/js/main.daa5559f.js.map",
     "787.65363d25.chunk.js.map": "/project7-hotel/static/js/787.65363d25.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b2ce7f2.css",
-    "static/js/main.938878d2.js"
+    "static/css/main.416af231.css",
+    "static/js/main.daa5559f.js"
   ]
 }
